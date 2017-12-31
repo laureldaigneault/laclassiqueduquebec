@@ -1,0 +1,83 @@
+/*
+#countdown {
+  position: absolute;
+  width: 500px;
+  left: calc(69% - 250px);
+  bottom: calc(50% - 140px - 9vw);
+}
+*/
+
+#countdown {
+  width: 100%;
+  margin-top: 20px;
+  left: calc(69% - 250px);
+  bottom: calc(50% - 140px - 9vw);
+}
+#countdown h1 {
+  padding: 2em 0;
+  text-shadow: 2px 2px 3px #0a463a;
+}
+#countdown .date {
+  width: 19%;
+  margin: 0.5%;
+  padding: 2%;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  /* Firefox */
+  display: block;
+  float: left;
+  font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+  text-align: center;
+  color: #CBAF65;
+  background-color: rgba(0,0,0,0.9);
+  border: solid 2px rgba(203,175,101,0.6);
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  border-radius: 6px;
+}
+#countdown .date-amount, #countdown .integer {
+  display: block;
+}
+#countdown .integer {
+  font-size: 3.5em;
+  line-height: 1em;
+}
+#countdown .date-amount {
+  font-size: 0.70em;
+  text-transform: uppercase;
+  color: white;
+  font-family: "Raleway", Georgia, serif;
+}
+
+.clearfix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+
+h1 {
+  text-align: center;
+}
+
+html[xmlns] .clearfix {
+  display: block;
+}
+
+* html .clearfix {
+  height: 1%;
+}
+
+@media screen and (max-width: 992px), screen and (max-device-width: 992px){
+  #countdown .integer {
+    font-size: 1.5em;
+    line-height: 0.8em;
+  }
+  #countdown .date-amount {
+    font-size: 0.45em;
+    text-transform: uppercase;
+    color: white;
+    font-family: "Raleway", Georgia, serif;
+  }
+}

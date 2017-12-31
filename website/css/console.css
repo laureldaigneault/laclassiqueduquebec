@@ -1,0 +1,83 @@
+.error-div {
+	border: 1px solid red;
+	padding:5px;
+	border-radius: 3px;
+	background-color: pink;
+	margin-top: 10px;
+	margin-bottom: 5px;
+	color:red;
+}
+.success-div{
+	border: 1px solid green;
+	padding:5px;
+	border-radius: 3px;
+	background-color: rgba(0,255,0,0.1);
+	margin-top: 10px;
+	margin-bottom: 5px;
+	color:green;
+}
+
+.console-container{
+    background-color: rgb(230,230,230);
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+}
+.console-container-title{
+    color: rgb(100,100,100);
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+}
+
+.image-item-container:first-child{
+    border-top: none;
+}
+.image-item-container{
+    padding: 6px;
+    border-radius: 5px;
+    border-top: solid 1px white;
+}
+.image-item-container:hover{
+    background-color: rgb(240,240,240)
+}
+
+.submit-button-style{
+    background-color: rgb(50,50,50) !important;
+    color: white;
+    outline: none;
+    border-radius: 5px;
+    border: none
+}
+
+.made-modal{
+    position: absolute;
+    height: 400px;
+    padding: 80px;
+    width: 75%;
+    top: calc(50% - 200px);
+    left: 12.5%;
+    background-color: rgb(240,240,240);
+    outline: solid 1000px rgba(0,0,0,0.3);
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.5s ease;
+}
+
+.made-modal-show{
+    opacity: 1;
+    pointer-events: all;
+}
+
+.force-hide{
+    display: none;
+}
+
+.show{
+    display: all !important;
+}
+
+.option-blue{
+    background-color: rgb(225,225,255);
+}

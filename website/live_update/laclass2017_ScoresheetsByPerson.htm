@@ -1,0 +1,83 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>SCORESHEETS BY PERSON</title>
+<meta name="GENERATOR" content="CompMngr 3">
+<script language="JavaScript" type="text/javascript">
+function save_button()
+{
+  if (document.person_list.PERSON_LIST.value == "")
+  {
+    alert("No person specified.");
+    return false;
+  }
+}
+</script>
+</head>
+<body bgcolor="#FFFFFF">
+<p align="center"><font face="Arial" size="6" color="#000040"><strong>La Classique Du Québec 2017</strong></font>&nbsp</p>
+<p align=center><font size="5" color="#000040"><strong>Scoresheet lookup for Persons</strong></font></p>
+<form name=person_list action=ScoresheetHandler.pl method=post onsubmit="return save_button()">
+<input type="hidden" name="DATA_FILE" value="<root>/laclass2017/laclass2017_scoresheetsbyperson.dat">
+<input type="hidden" name="COMP_NAME" value="La Classique du Québec">
+<table width="100%%" cellspacing="20"><tr>
+<td width="50%%" align="right" valign="top"><p>
+<strong>Click on name then<br>on 'Retrieve' button</strong><br>
+<select multiple size="20" name="PERSON_LIST">
+<option value='3406=TESTGG-M (461)'>TESTGG-M (461)
+<option value='3405=TESTGG'>TESTGG
+</select><br>
+<input type=submit value="Retrieve scoresheets" name="SUBMIT">
+</p></td>
+<td align="left" valign="top"><p>
+<strong>List of Judges</strong><br>
+10 Pierre Allaire<br>
+11 Rita Algarra<br>
+12 Didio Barrera<br>
+13 Loraine Barry<br>
+14 Patricia Contenta<br>
+15 Ginette Cournoyer<br>
+16 Rufus Dustin<br>
+17 Hannes Emrich<br>
+18 Giampiero Giannico<br>
+19 Markus Homm<br>
+20 BIll Jacobson<br>
+21 Chris Johnston<br>
+22 Anik Jolicoeur<br>
+23 Thomas Papkala<br>
+24 Eugene Katsevman<br>
+25 Tatiana Kazakova<br>
+26 John Kimmins<br>
+27 Elena Kryuchkova<br>
+28 Igor Litvinov<br>
+29 Emil Ioukhnikov<br>
+30 Iveta Lukosiute<br>
+31 Diana MacDonald<br>
+32 Gary MacDonald<br>
+33 Lisa MacLaggan<br>
+34 Gary Edwards<br>
+35 Brigitt Mayer<br>
+36 Alain Millette<br>
+37 France Mousseau<br>
+38 Marianne Nicole<br>
+39 Benoit Papineau<br>
+40 Christiane Primeau<br>
+41 Danny Quilliam<br>
+42 Sylvain Trottier<br>
+43 Sam Sodano<br>
+44 Jolan Sniegocki<br>
+45 Aigars Stolcers<br>
+46 Inessa Strelnikova<br>
+47 Vibeke Toft<br>
+48 Allan Tornsberg<br>
+49 Aira Vaidiliene<br>
+50 Tatiana Vainer<br>
+51 Mireille Veilleux<br>
+52 Kenny Welsh<br>
+53 Marion Welsh<br>
+54 Zilvinas Vaidila<br>
+</p></td>
+</tr></table>
+</form>
+</body>
+</html>
