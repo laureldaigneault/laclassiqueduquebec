@@ -1,4 +1,4 @@
-<?php 
+<?php
 	require('utils/lang.php');
 	require('action/competitorsAction.php');
 
@@ -44,7 +44,7 @@
 							}
 						?>
 					</tbody>
-				</table> 
+				</table>
 
 			<?php } ?>
 
@@ -65,12 +65,56 @@
 					</thead>
 					<tbody class="comp-table">
 						<?php
-							foreach ($action->other_documents as $doc) { 
+							foreach ($action->other_documents as $doc) {
 								if($doc['visible'] == 1) {?>
 								<tr><td><?= $doc['name_'.LANG]?></td><td><a href='<?=$doc['url_pdf_'.LANG]?>' target='_blank'><img class='pdf-icon' src='img/pdf-icon.png'/></a></td></tr>
 							<?php }
 							}
 						?>
+
+						<?php
+						if($action->heatlist['arg2'] == '1') { ?>
+							<tr style="height: 85px"><td>
+							<?php
+								if(LANG == "fr") {
+									echo "Entrées";
+								}
+								if(LANG == "en") {
+									echo "Heatlists";
+								}
+							?></td><td style="vertical-align: middle"><a href='<?=$action->heatlist['arg1']?>' target='_blank'>
+							<?php
+									if(LANG == "fr") {
+										echo "Lien";
+									}
+									if(LANG == "en") {
+										echo "Link";
+									}
+								?>
+							</a></td></tr>
+						<?php } ?>
+
+						<?php
+						if($action->result['arg2'] == '1') { ?>
+							<tr style="height: 85px"><td>
+							<?php
+								if(LANG == "fr") {
+									echo "Résultats";
+								}
+								if(LANG == "en") {
+									echo "Results";
+								}
+							?></td><td style="vertical-align: middle"><a href='<?=$action->result['arg1']?>' target='_blank'>
+							<?php
+									if(LANG == "fr") {
+										echo "Lien";
+									}
+									if(LANG == "en") {
+										echo "Link";
+									}
+								?>
+							</a></td></tr>
+						<?php } ?>
 					</tbody>
 				</table>
 			<?php } ?>
@@ -84,6 +128,6 @@
 
 </body>
 <!-- /body -->
-<?php 
+<?php
 	include("partials/footer.php");
 ?>

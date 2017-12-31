@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />	
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-	
+
 	<!-- FAVICON -->
 	<link rel="shortcut icon" href="favicon.ico" type="img/favicon.ico">
 	<link rel="icon" href="favicon.ico" type="image/x-icon">
 
 	<!-- GOOGLE FONTS -->
 	<link href='http://fonts.googleapis.com/css?family=Raleway:400,700,600,500,300,200,100,800,900' rel='stylesheet' type='text/css'>
-	
+
 	<script
   src="https://code.jquery.com/jquery-2.2.4.min.js"
   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
@@ -41,7 +41,8 @@
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
-  
+  	<?php
+			if($_SESSION["visibility"] > 1) { ?>
       <ul class="nav navbar-nav">
         <li><a href="console_home.php">Accueil</a></li>
 				<li><a href="console_menus.php">Menus</a></li>
@@ -50,6 +51,8 @@
 				<li><a href="console_gallery.php">Gallerie</a></li>
 				<li><a href="console_other.php">Autres options</a></li>
 				<li><a href="console_members.php">Membres</a></li>
+				<li style="height: 25px; border-right: solid 1px black; margin-top: 11px"></li>
+				<li><a href="console_manager_modifs.php">Modifications</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="console_logos.php">Logos</a></li>
@@ -58,6 +61,17 @@
 				<li><a href="console_pdfs.php">Pdfs</a></li>
 				<li><a href="login.php?logout=true"><img src="img/logout.png" style="height: 20px"/></a></li>
       </ul>
+		<?php } ?>
+		<?php
+			if($_SESSION["visibility"] == 1) { ?>
+      <ul class="nav navbar-nav">
+        <li><a href="console_home.php">Accueil</a></li>
+				<li><a href="console_manager_modifs.php">Modifications</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+				<li><a href="login.php?logout=true"><img src="img/logout.png" style="height: 20px"/></a></li>
+      </ul>
+		<?php } ?>
     </div><!-- /.navbar-collapse -->
 
 </nav>

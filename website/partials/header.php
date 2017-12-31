@@ -1,5 +1,5 @@
 <?php
-	
+
 	$languages = array('fr','en');
 
 	// handle language selection
@@ -21,24 +21,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />	
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-	
+
 	<!-- FAVICON -->
 	<link rel="shortcut icon" href="<?= $action_header->faviconIco['url_image_'.LANG] ?>" type="img/favicon.ico">
 	<link rel="icon" href="<?= $action_header->faviconIco['url_image_'.LANG] ?>">
-			
+
 	<!-- TITLE -->
 	<title><?= $action_header->main_title[langIndex(LANG)] ?></title>
-		
-	<!-- DESCRIPTION -->		
+
+	<!-- DESCRIPTION -->
 	<meta name="description" content="La Classique du Quebec" />
 	<meta name="keywords"  content="Dance, Championship, Classique, Quebec, Professional, Amateur, Ballroom, Meryem, Pearson, Daniel, Héroux, Toronto Grand Prix, Dancing, Shoes" />
 	<meta name="author" content="Ré-Communications" />
 
 	<!-- GOOGLE FONTS -->
 	<link href='http://fonts.googleapis.com/css?family=Raleway:400,700,600,500,300,200,100,800,900' rel='stylesheet' type='text/css'>
-	
+
 	<!-- STYLESHEETS -->
 	<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 	<link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" />
@@ -56,7 +56,7 @@
 
 	<!-- template and navbar vendor styles -->
 	<!-- <link rel="stylesheet" type="text/css" href="css/main.css" /> -->
-	
+
 	<script
   src="https://code.jquery.com/jquery-2.2.4.min.js"
   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
@@ -111,15 +111,15 @@
 
 							<?php
 								if($action_header->event_menus_visible_count > 0) { ?>
- 
+
 								<li class="dropdown">
 									<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?= $action_header->event_menu[langIndex(LANG)] ?> <span class="caret"></span></a>
 									<ul class="dropdown-menu" role="menu">
 										<?php
-											foreach ($action_header->event_menus as $menu) { 
+											foreach ($action_header->event_menus as $menu) {
 												if($menu['visible'] == 1) {?>
 												<li><a href="
-													<?php 
+													<?php
 														if($menu['type'] == 'url'){
 															echo $menu['value_'.LANG];
 														}
@@ -135,28 +135,35 @@
 												}
 											}
 											?>
-										<!--<li class="dropdown-header"><?= $dataHeader[2][langIndex(LANG)][1][0][0] ?></li>
-										<li><a href="<?= $dataHeader[2][langIndex(LANG)][1][3][1] ?>" target="_blank"><?= $dataHeader[2][langIndex(LANG)][1][3][0] ?></a></li>
-										<li><a href="<?= $dataHeader[2][langIndex(LANG)][1][2][1] ?>" target="_blank"><?= $dataHeader[2][langIndex(LANG)][1][2][0] ?></a></li>
-										<li><a href="<?= $dataHeader[2][langIndex(LANG)][1][19][1] ?>" target="_blank"><?= $dataHeader[2][langIndex(LANG)][1][19][0] ?></a></li>
-										<li><a href="<?= $dataHeader[2][langIndex(LANG)][1][1][1] ?>" target="_blank"><?= $dataHeader[2][langIndex(LANG)][1][1][0] ?></a></li>
 
-										<li class="divider2"></li>
-										<li><a href="pdf/event/plan-salle-2017.jpg" target="_blank"><?= $dataHeader[2][langIndex(LANG)][1][4][0] ?></a></li>
-										<li><a href="<?= $dataHeader[2][langIndex(LANG)][1][5][1] ?>" target="_blank"><?= $dataHeader[2][langIndex(LANG)][1][5][0] ?></a></li>
-										<li><a href="<?= $dataHeader[2][langIndex(LANG)][1][7][1] ?>" target="_blank"><?= $dataHeader[2][langIndex(LANG)][1][7][0] ?></a></li>
-										<li><a href="<?= $dataHeader[2][langIndex(LANG)][1][10][1] ?>" target="_blank"><?= $dataHeader[2][langIndex(LANG)][1][10][0] ?></a></li>
-										<li><a href="<?= $dataHeader[2][langIndex(LANG)][1][11][1] ?>" target="_blank"><?= $dataHeader[2][langIndex(LANG)][1][11][0] ?></a></li>
-										<li><a href="<?= $dataHeader[2][langIndex(LANG)][1][12][1] ?>" target="_blank"><?= $dataHeader[2][langIndex(LANG)][1][12][0] ?></a></li>
-										<li><a href="<?= $dataHeader[2][langIndex(LANG)][1][13][1] ?>" target="_blank"><?= $dataHeader[2][langIndex(LANG)][1][13][0] ?></a></li>
-										<li><a href="<?= $dataHeader[2][langIndex(LANG)][1][14][1] ?>" target="_blank"><?= $dataHeader[2][langIndex(LANG)][1][14][0] ?></a></li>
-										<li><a href="<?= $dataHeader[2][langIndex(LANG)][1][15][1] ?>" target="_blank"><?= $dataHeader[2][langIndex(LANG)][1][15][0] ?></a></li>
-										<li><a href="<?= $dataHeader[2][langIndex(LANG)][1][16][1] ?>" target="_blank"><?= $dataHeader[2][langIndex(LANG)][1][16][0] ?></a></li>
-										<li><a href="<?= $dataHeader[2][langIndex(LANG)][1][17][1] ?>" target="_blank"><?= $dataHeader[2][langIndex(LANG)][1][17][0] ?></a></li>
-										<li><a href="<?= $dataHeader[2][langIndex(LANG)][1][8][1] ?>" target="_blank"><?= $dataHeader[2][langIndex(LANG)][1][8][0] ?></a></li>
-										<li><a href="<?= $dataHeader[2][langIndex(LANG)][1][9][1] ?>" target="_blank"><?= $dataHeader[2][langIndex(LANG)][1][9][0] ?></a></li>
-										<li><a href="<?= $dataHeader[2][langIndex(LANG)][1][18][1] ?>" target="_blank"><?= $dataHeader[2][langIndex(LANG)][1][18][0] ?></a></li>
-										<li><a href="<?= $dataHeader[2][langIndex(LANG)][1][20][1] ?>" target="_blank"><?= $dataHeader[2][langIndex(LANG)][1][20][0] ?></a></li> -->
+											<?php
+											if($action_header->heatlist['arg2'] == '1') {?>
+											<li><a href="<?= $action_header->heatlist['arg1']?>" target="_blank"><?php
+												if(LANG == "fr") {
+													echo "Entrées";
+												}
+												if(LANG == "en") {
+													echo "Heatlists";
+												}
+											?>
+											</a></li>
+											<?php
+												}
+											?>
+											<?php
+											if($action_header->result['arg2'] == '1') {?>
+											<li><a href="<?= $action_header->result['arg1']?>" target="_blank"><?php
+												if(LANG == "fr") {
+													echo "Résultats";
+												}
+												if(LANG == "en") {
+													echo "Results";
+												}
+											?>
+											</a></li>
+										<?php
+											}
+										?>
 									</ul>
 								</li>
 							<?php } ?>
@@ -169,11 +176,11 @@
 								<ul class="dropdown-menu" role="menu">
 
 									<?php
-											foreach ($action_header->ticket_menus as $menu) { 
+											foreach ($action_header->ticket_menus as $menu) {
 												if($menu['visible'] == 1) {?>
-											
+
 												<li><a href="
-													<?php 
+													<?php
 														if($menu['type'] == 'url'){
 															echo $menu['value_'.LANG];
 														}
@@ -189,49 +196,14 @@
 												}
 											}
 											?>
-									<!--<li><a href="<?= $dataHeader[3][langIndex(LANG)][1][0][1] ?>" target="_blank"><?= $dataHeader[3][langIndex(LANG)][1][0][0] ?></a></li>
-									<li><a href="<?= $dataHeader[3][langIndex(LANG)][1][1][1] ?>" target="_blank"><?= $dataHeader[3][langIndex(LANG)][1][1][0] ?></a></li>
-									<li><a href="<?= $dataHeader[3][langIndex(LANG)][1][2][1] ?>" target="_blank"><?= $dataHeader[3][langIndex(LANG)][1][2][0] ?></a></li>
-									<li><a href="<?= $dataHeader[3][langIndex(LANG)][1][3][1] ?>" target="_blank"><?= $dataHeader[3][langIndex(LANG)][1][3][0] ?></a></li>-->
 								</ul>
-							</li> 
+							</li>
 								<?php } ?>
 
 	          <li><a class="static-menu-item" href="competitors.php"><?= $action_header->competitor_menu[langIndex(LANG)] ?></a></li>
-
-	          <!-- <li class="dropdown">
-	            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Compétiteurs <span class="caret"></span></a>
-	            <ul class="dropdown-menu" role="menu">
-	              <li class="dropdown-header">Professionnel</li>
-	              <li><a href="#">Inscription</a></li>
-	              <li><a href="#">Règlements</a></li>
-	              <li><a href="#">Fiche comptable</a></li>
-	              <li><a href="#">TOP TEACHERS $$$</a></li>
-	              <li class="divider2"></li>
-	              <li class="dropdown-header">Pro-Am</li>
-	              <li><a href="#">Inscription - Danse Unique</a></li>
-	              <li><a href="#">Inscription - Danse Multiple & Solo</a></li>
-	              <li><a href="#">Règlements</a></li>
-	              <li><a href="#">Fiche comptable</a></li>
-	              <li><a href="#">DanceSport Series</a></li>
-	              <li class="divider2"></li>
-	              <li class="dropdown-header">Amateur</li>
-	              <li><a href="#">Inscription - Style #1 Débutant à Pre-Champ</a></li>
-	              <li><a href="#">Inscription - Style #2 Championnats Ouverts</a></li>
-	              <li><a href="#">Inscription - Style #3 Danse Unique Mixte</a></li>
-	              <li><a href="#">Inscription - Style #4 Social / Style Américain</a></li>
-	              <li><a href="#">Inscription - Style #5 Équipe de Formation</a></li>
-	              <li><a href="#">Inscription - Style #6 Solo des Stars</a></li>
-	              <li><a href="#">Règlements</a></li>
-	              <li><a href="#">Fiche comptable</a></li>
-	              
-	              
-	              
-	            </ul>
-	          </li> -->
 	          <li><a class="static-menu-item" href="#contactModalFinal" data-toggle="modal"><?= $action_header->contact_menu[langIndex(LANG)] ?></a></li>
 
-	          <?php 
+	          <?php
 	          	if(LANG == 'en'){
 	          		echo "<li><a class='static-menu-item' href='".$_SERVER['PHP_SELF'] . "?lang=fr'>Français</a></li>";
 	          	} else {
@@ -249,5 +221,5 @@
 
 
 	<script>
-		
+
 	</script>

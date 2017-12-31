@@ -1,6 +1,7 @@
 <?php
 	require_once("action/CommonAction.php");
 	require_once("action/DAO/CompetitorsDAO.php");
+	require_once("action/DAO/MiscDAO.php");
 
 	class competitorsAction extends CommonAction {
 
@@ -9,26 +10,36 @@
 		}
 
 		protected function executeAction() {
+			$this->comp_visible_count=0;
+			$this->other_visible_count=0;
+
+			$this->heatlist=MiscDAO::get("heatlist_link");
+			$this->result=MiscDAO::get("result_link");
+
+			if($this->heatlist['arg2'] == '1') {
+				$this->other_visible_count++;
+			}
+			if($this->result['arg2'] == '1') {
+				$this->other_visible_count++;
+			}
+
 			$this->compSection = ["Compétiteurs","Competitors"];
 			$this->otherSection = ["Autres documents","Other documents"];
 
 			$this->comp_documents = CompetitorsDAO::getAllCompetitors('comp');
 			$this->other_documents = CompetitorsDAO::getAllCompetitors('other');
 
-			$this->comp_visible_count=0;
-			$this->other_visible_count=0;
-
-			foreach ($this->comp_documents as $doc) { 
+			foreach ($this->comp_documents as $doc) {
 				if($doc['visible'] == 1){
 					$this->comp_visible_count++;
 				}
 			}
-			foreach ($this->other_documents as $doc) { 
+			foreach ($this->other_documents as $doc) {
 				if($doc['visible'] == 1){
 					$this->other_visible_count++;
 				}
 			}
-			
+
 			// $this->docs=[
 			// 			[
 			// 				["PRO-AM Danse Single Inscription","pdf/competitor/0002017ClaPro-AmSingle1FRANCAISSept15.pdf"],
