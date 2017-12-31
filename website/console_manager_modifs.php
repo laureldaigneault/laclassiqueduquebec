@@ -13,6 +13,20 @@
 
 	<!-- cnn -->
 	<div class="row console-container option-blue">
+
+		<?php
+			if ($action->pdfUploadError != null) {
+				?>
+				<div class="error-div"><strong><?=$action->pdfUploadError?></strong></div>
+				<?php
+			}
+			if ($action->pdfUploadSuccess != null) {
+				?>
+				<div class="success-div"><strong><?=$action->pdfUploadSuccess?></strong></div>
+				<?php
+			}
+		?>
+
 		<h1 class="console-container-title">Modifier le pdf horaire</h1>
 		<p></p>
 		<form action="console_manager_modifs.php" method="post" enctype="multipart/form-data">
@@ -21,15 +35,17 @@
 					<p style="width: 100%; text-align: right">Le pdf en français: </p>
 				</div>
 				<div class="col-md-4">
-					<input type="file" name="fileToUpload" id="fileToUpload">
+					<input type="file" name="fileToUploadFr" id="fileToUploadFr">
 				</div>
 				<div class="col-md-4">
-					<a href="" target="_blank">cliquez pour voir le pdf actuel: <img src="img/pdflogo.png" style="height: 30px"/></a>
+					<a href="<?=$action->scheduleActivePdfFr['url']?>" target="_blank">cliquez pour voir le pdf actuel: <img src="img/pdflogo.png" style="height: 30px"/></a>
 				</div>
 			</div>
 
+			<input type="hidden" name="idOfPdfUpdateFr" id="idOfPdfUpdateFr" value="999998">
+
 			<div class="row text-center" style="margin-top: 5px">
-				<input type="submit" value="Télécharger" name="submit_pdf" class="submit-button-style">
+				<input type="submit" value="Télécharger" name="pdf_edit_fr" id="pdf_edit_fr" class="submit-button-style">
 			</div>
 
 		</form>
@@ -40,15 +56,17 @@
 					<p style="width: 100%; text-align: right">Le pdf en anglais: </p>
 				</div>
 				<div class="col-md-4">
-					<input type="file" name="fileToUpload" id="fileToUpload">
+					<input type="file" name="fileToUploadEn" id="fileToUploadEn">
 				</div>
 				<div class="col-md-4">
-					<a href="" target="_blank">cliquez pour voir le pdf actuel: <img src="img/pdflogo.png" style="height: 30px"/></a>
+					<a href="<?=$action->scheduleActivePdfEn['url']?>" target="_blank">cliquez pour voir le pdf actuel: <img src="img/pdflogo.png" style="height: 30px"/></a>
 				</div>
 			</div>
 
+			<input type="hidden" name="idOfPdfUpdateEn" id="idOfPdfUpdateEn" value="999999">
+
 			<div class="row text-center" style="margin-top: 5px; margin-bottom: 30px">
-				<input type="submit" value="Télécharger" name="submit_pdf" class="submit-button-style">
+				<input type="submit" value="Télécharger" name="pdf_edit_en" id="pdf_edit_en" class="submit-button-style">
 			</div>
 
 		</form>

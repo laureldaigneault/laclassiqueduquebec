@@ -1,4 +1,4 @@
-<?php 
+<?php
 	require('utils/lang.php');
 	require('action/ConsolePdfsAction.php');
 
@@ -11,7 +11,7 @@
 	<div class="col-md-8 col-md-offset-2">
 		<div class="row console-container">
 
-			<?php 
+			<?php
 				if ($action->pdfUploadError != null) {
 					?>
 					<div class="error-div"><strong><?=$action->pdfUploadError?></strong></div>
@@ -43,18 +43,18 @@
 						</select>
 					</div>
 				</div>
-				
+
 				<div class="row text-center" style="margin-top: 20px">
 					<input type="submit" value="Télécharger" name="submit_pdf" class="submit-button-style">
 				</div>
-				
+
 			</form>
 		</div>
 		<p style="margin-left: 10px; margin-top: 40px; font-style: italic;">Liste de tous les PDF:</p>
 		<div class="row console-container">
 			<?php
 				foreach ($action->pdfs as $pdf) { ?>
-					
+
 						<div class="row image-item-container">
 							<div class="col-md-1">
 								<a href="<?= $pdf['url'] ?>" target="_blank"><img src="img/pdflogo.png" style="height: 30px"/></a>
@@ -71,12 +71,15 @@
 							<div class="col-md-2">
 								<div class="row">
 									<button type="button" class="btn btn-primary" onclick="setEditPdf('<?= $pdf['pdf_id'] ?>', '<?= $pdf['url'] ?>', '<?= $pdf['name'] ?>')">Modifier</button>
-									<button type="button" class="btn btn-danger" onclick="deletePdf('<?= $pdf['pdf_id'] ?>', '<?= $pdf['url'] ?>', '<?= $pdf['name'] ?>')">Supprimer</button>
+									<?php
+									if($pdf['pdf_id'] != 999998 && $pdf['pdf_id'] != 999999) { ?>
+										<button type="button" class="btn btn-danger" onclick="deletePdf('<?= $pdf['pdf_id'] ?>', '<?= $pdf['url'] ?>', '<?= $pdf['name'] ?>')">Supprimer</button>
+									<?php } ?>
 								</div>
-								
+
 							</div>
 						</div>
-					
+
 				<?php
 				}
 			?>
@@ -116,7 +119,7 @@
 			activePdf.id=id;
 			activePdf.url=url;
 			activePdf.name=name;
-			
+
 			$("#myModal").addClass('made-modal-show');
 
 			$('#nameOfFileUpdate').val(activePdf.name);
